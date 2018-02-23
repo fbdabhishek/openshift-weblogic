@@ -55,7 +55,7 @@ RUN export ADMIN_PASSWORD=$(if [ -z "$ADMIN_PASSWORD" ]; then dd if=/dev/urandom
     echo "username=weblogic" > /u01/oracle/user_projects/domains/$DOMAIN_NAME/servers/AdminServer/security/boot.properties && \ 
     echo "password=$ADMIN_PASSWORD" >> /u01/oracle/user_projects/domains/$DOMAIN_NAME/servers/AdminServer/security/boot.properties && \
     echo ". /u01/oracle/user_projects/domains/$DOMAIN_NAME/bin/setDomainEnv.sh" >> /u01/oracle/.bashrc && \
-    find /u01  -exec chmod a+rwX /u01 {} ';'
+    find /u01 -user oracle -exec chmod a+rwX /u01 {} ';'
 
 # Expose Node Manager default port, and also default for admin and managed server 
 # oc new-app does not like variables used in ports.

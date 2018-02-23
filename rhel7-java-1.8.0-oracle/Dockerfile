@@ -10,7 +10,7 @@ RUN yum --disablerepo=* \
         --enablerepo=rhel-7-server-rpms \
         --enablerepo=rhel-7-server-extras-rpms \
         --enablerepo=rhel-7-server-optional-rpms \
-        --enablerepo=rhel-7-server-thirdparty-oracle-java-rpms \
+        --enablerepo=rhel-7-server-restricted-maintenance-oracle-java-rpms \
       install -y \
       java-${JAVA_VERSION}-${JAVA_TYPE}-devel \
       java-${JAVA_VERSION}-${JAVA_TYPE}-jdbc && \
